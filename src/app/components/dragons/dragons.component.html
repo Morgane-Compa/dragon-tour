@@ -1,0 +1,14 @@
+<!-- Mon titre, le  | uppercase est pour mettre le nom en MAJUSCULES-->
+<h2>{{dragon.name | uppercase}} details</h2>
+
+<!-- j'affiche les infos de mon dragon -->
+<div><span>id: </span>{{dragon.id}}</div>
+
+<!-- Ce qu'il y avait avant -->
+<!-- <div><span>name: </span>{{dragon.name}}</div> -->
+<!-- ce qu'il y a maintenant -->
+<div>
+    <!-- J'ai mis le dragon name : dans une span juste pour que ça change le style mais normalement il faut pas le faire -->
+    <label for="name"><span>dragon name: </span></label>
+    <input id="name" [(ngModel)]="dragon.name" placeholder="name">
+  </div>
