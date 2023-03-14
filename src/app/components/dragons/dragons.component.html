@@ -1,14 +1,25 @@
-<!-- Mon titre, le  | uppercase est pour mettre le nom en MAJUSCULES-->
-<h2>{{dragon.name | uppercase}} details</h2>
+<!-- Ma liste de dragons -->
+<h2>My Dragons : </h2>
+<!-- je génère une liste dans laquelle jinitialise une boucle pour faire apparaitre les élément de mon tableau de dragons -->
+<ul class="heroes">
+  <li *ngFor="let item of dragons">
+    <button [class.selected]="dragon === selectedDragon" type="button" (click)="onSelect(item)">
+      <!-- sépare les bouton en deux pour les styliser de manière différent dans le css -->
+      <span class="badge">{{item.id}}</span>
+      <span class="name">{{item.name}}</span>
+    </button>
+  </li>
+</ul>
 
-<!-- j'affiche les infos de mon dragon -->
-<div><span>id: </span>{{dragon.id}}</div>
 
-<!-- Ce qu'il y avait avant -->
-<!-- <div><span>name: </span>{{dragon.name}}</div> -->
-<!-- ce qu'il y a maintenant -->
-<div>
-    <!-- J'ai mis le dragon name : dans une span juste pour que ça change le style mais normalement il faut pas le faire -->
-    <label for="name"><span>dragon name: </span></label>
-    <input id="name" [(ngModel)]="dragon.name" placeholder="name">
-  </div>
+<div *ngIf="selectedDragon">
+    <!-- Mon titre, le  | uppercase est pour mettre le nom en MAJUSCULES-->
+    <h2>{{selectedDragon.name | uppercase}} details : </h2>
+    <!-- j'affiche les infos de mon dragon -->
+    <p><span>id : </span>{{selectedDragon.id}}</p>
+    
+    <div>
+      <label for="dragon-name"><span>Dragon name : </span></label>
+      <input id="dragon-name" [(ngModel)]="selectedDragon.name" placeholder="name">
+    </div>
+</div>
