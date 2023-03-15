@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { DRAGONS } from 'src/app/mocks/mock-dragons';
+import { dragon } from 'src/app/mocks/dragons';
+
 
 @Component({
   selector: 'app-dragon-detail',
@@ -7,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class DragonDetailComponent {
 
+  @Input() dragon? : dragon;
 }

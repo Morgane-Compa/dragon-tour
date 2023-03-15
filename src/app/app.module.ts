@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DragonsComponent } from './components/dragons/dragons.component';
 import { DragonDetailComponent } from './components/dragon-detail/dragon-detail.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DragonsComponent,
-    DragonDetailComponent
+    DragonDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

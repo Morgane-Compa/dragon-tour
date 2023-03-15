@@ -12,14 +12,4 @@
 </ul>
 
 
-<div *ngIf="selectedDragon">
-    <!-- Mon titre, le  | uppercase est pour mettre le nom en MAJUSCULES-->
-    <h2>{{selectedDragon.name | uppercase}} details : </h2>
-    <!-- j'affiche les infos de mon dragon -->
-    <p><span>id : </span>{{selectedDragon.id}}</p>
-    
-    <div>
-      <label for="dragon-name"><span>Dragon name : </span></label>
-      <input id="dragon-name" [(ngModel)]="selectedDragon.name" placeholder="name">
-    </div>
-</div>
+<app-dragon-detail [dragon]="selectedDragon"></app-dragon-detail>
