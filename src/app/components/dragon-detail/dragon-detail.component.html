@@ -1,1 +1,12 @@
-<p>dragon-detail works!</p>
+<div *ngIf="dragon">
+    <!-- Mon titre, le  | uppercase est pour mettre le nom en MAJUSCULES-->
+    <h2>{{dragon.name | uppercase}} details : </h2>
+    <!-- j'affiche les infos de mon dragon -->
+    <p><span>id : </span>{{dragon.id}}</p>
+    
+    <div>
+      <label for="dragon-name"><span>Dragon name : </span></label>
+      <input id="dragon-name" [(ngModel)]="dragon.name" placeholder="name">
+    </div>
+</div>
+
